@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30CFD1192A577E650018EE86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD1182A577E650018EE86 /* AppDelegate.swift */; };
+		30CFD11B2A577E650018EE86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD11A2A577E650018EE86 /* SceneDelegate.swift */; };
+		30CFD11D2A577E650018EE86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD11C2A577E650018EE86 /* ViewController.swift */; };
+		30CFD1222A577E670018EE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD1212A577E670018EE86 /* Assets.xcassets */; };
+		30CFD1252A577E670018EE86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30CFD1232A577E670018EE86 /* LaunchScreen.storyboard */; };
+		30CFD1302A577E670018EE86 /* FichaMakerT20Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD12F2A577E670018EE86 /* FichaMakerT20Tests.swift */; };
+		30CFD13A2A577E670018EE86 /* FichaMakerT20UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD1392A577E670018EE86 /* FichaMakerT20UITests.swift */; };
+		30CFD13C2A577E670018EE86 /* FichaMakerT20UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD13B2A577E670018EE86 /* FichaMakerT20UITestsLaunchTests.swift */; };
+		30CFD14A2A577E950018EE86 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD1492A577E950018EE86 /* CharacterModel.swift */; };
+		30CFD14D2A5FBD230018EE86 /* PdfHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD14C2A5FBD230018EE86 /* PdfHandler.swift */; };
+		30CFD1522A5FBD8B0018EE86 /* PdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD1512A5FBD8B0018EE86 /* PdfViewController.swift */; };
+		30CFD1542A5FBECF0018EE86 /* SheetBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CFD1532A5FBECF0018EE86 /* SheetBuilder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30CFD12C2A577E670018EE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFD10D2A577E650018EE86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30CFD1142A577E650018EE86;
+			remoteInfo = FichaMakerT20;
+		};
+		30CFD1362A577E670018EE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30CFD10D2A577E650018EE86 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30CFD1142A577E650018EE86;
+			remoteInfo = FichaMakerT20;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		30CFD1152A577E650018EE86 /* FichaMakerT20.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FichaMakerT20.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30CFD1182A577E650018EE86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		30CFD11A2A577E650018EE86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		30CFD11C2A577E650018EE86 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		30CFD1212A577E670018EE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		30CFD1242A577E670018EE86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		30CFD1262A577E670018EE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30CFD12B2A577E670018EE86 /* FichaMakerT20Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FichaMakerT20Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30CFD12F2A577E670018EE86 /* FichaMakerT20Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaMakerT20Tests.swift; sourceTree = "<group>"; };
+		30CFD1352A577E670018EE86 /* FichaMakerT20UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FichaMakerT20UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30CFD1392A577E670018EE86 /* FichaMakerT20UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaMakerT20UITests.swift; sourceTree = "<group>"; };
+		30CFD13B2A577E670018EE86 /* FichaMakerT20UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaMakerT20UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		30CFD1492A577E950018EE86 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		30CFD14C2A5FBD230018EE86 /* PdfHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfHandler.swift; sourceTree = "<group>"; };
+		30CFD1512A5FBD8B0018EE86 /* PdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfViewController.swift; sourceTree = "<group>"; };
+		30CFD1532A5FBECF0018EE86 /* SheetBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetBuilder.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30CFD1122A577E650018EE86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30CFD1282A577E670018EE86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30CFD1322A577E670018EE86 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30CFD10C2A577E650018EE86 = {
+			isa = PBXGroup;
+			children = (
+				30CFD1172A577E650018EE86 /* FichaMakerT20 */,
+				30CFD12E2A577E670018EE86 /* FichaMakerT20Tests */,
+				30CFD1382A577E670018EE86 /* FichaMakerT20UITests */,
+				30CFD1162A577E650018EE86 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30CFD1162A577E650018EE86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD1152A577E650018EE86 /* FichaMakerT20.app */,
+				30CFD12B2A577E670018EE86 /* FichaMakerT20Tests.xctest */,
+				30CFD1352A577E670018EE86 /* FichaMakerT20UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30CFD1172A577E650018EE86 /* FichaMakerT20 */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD1502A5FBD6C0018EE86 /* Controllers */,
+				30CFD14B2A5FBD010018EE86 /* handlers */,
+				30CFD1482A577E770018EE86 /* Models */,
+				30CFD1182A577E650018EE86 /* AppDelegate.swift */,
+				30CFD11A2A577E650018EE86 /* SceneDelegate.swift */,
+				30CFD11C2A577E650018EE86 /* ViewController.swift */,
+				30CFD1212A577E670018EE86 /* Assets.xcassets */,
+				30CFD1232A577E670018EE86 /* LaunchScreen.storyboard */,
+				30CFD1262A577E670018EE86 /* Info.plist */,
+			);
+			path = FichaMakerT20;
+			sourceTree = "<group>";
+		};
+		30CFD12E2A577E670018EE86 /* FichaMakerT20Tests */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD12F2A577E670018EE86 /* FichaMakerT20Tests.swift */,
+			);
+			path = FichaMakerT20Tests;
+			sourceTree = "<group>";
+		};
+		30CFD1382A577E670018EE86 /* FichaMakerT20UITests */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD1392A577E670018EE86 /* FichaMakerT20UITests.swift */,
+				30CFD13B2A577E670018EE86 /* FichaMakerT20UITestsLaunchTests.swift */,
+			);
+			path = FichaMakerT20UITests;
+			sourceTree = "<group>";
+		};
+		30CFD1482A577E770018EE86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD1492A577E950018EE86 /* CharacterModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30CFD14B2A5FBD010018EE86 /* handlers */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD14C2A5FBD230018EE86 /* PdfHandler.swift */,
+				30CFD1532A5FBECF0018EE86 /* SheetBuilder.swift */,
+			);
+			path = handlers;
+			sourceTree = "<group>";
+		};
+		30CFD1502A5FBD6C0018EE86 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				30CFD1512A5FBD8B0018EE86 /* PdfViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30CFD1142A577E650018EE86 /* FichaMakerT20 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30CFD13F2A577E670018EE86 /* Build configuration list for PBXNativeTarget "FichaMakerT20" */;
+			buildPhases = (
+				30CFD1112A577E650018EE86 /* Sources */,
+				30CFD1122A577E650018EE86 /* Frameworks */,
+				30CFD1132A577E650018EE86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FichaMakerT20;
+			productName = FichaMakerT20;
+			productReference = 30CFD1152A577E650018EE86 /* FichaMakerT20.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30CFD12A2A577E670018EE86 /* FichaMakerT20Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30CFD1422A577E670018EE86 /* Build configuration list for PBXNativeTarget "FichaMakerT20Tests" */;
+			buildPhases = (
+				30CFD1272A577E670018EE86 /* Sources */,
+				30CFD1282A577E670018EE86 /* Frameworks */,
+				30CFD1292A577E670018EE86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30CFD12D2A577E670018EE86 /* PBXTargetDependency */,
+			);
+			name = FichaMakerT20Tests;
+			productName = FichaMakerT20Tests;
+			productReference = 30CFD12B2A577E670018EE86 /* FichaMakerT20Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30CFD1342A577E670018EE86 /* FichaMakerT20UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30CFD1452A577E670018EE86 /* Build configuration list for PBXNativeTarget "FichaMakerT20UITests" */;
+			buildPhases = (
+				30CFD1312A577E670018EE86 /* Sources */,
+				30CFD1322A577E670018EE86 /* Frameworks */,
+				30CFD1332A577E670018EE86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30CFD1372A577E670018EE86 /* PBXTargetDependency */,
+			);
+			name = FichaMakerT20UITests;
+			productName = FichaMakerT20UITests;
+			productReference = 30CFD1352A577E670018EE86 /* FichaMakerT20UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30CFD10D2A577E650018EE86 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					30CFD1142A577E650018EE86 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					30CFD12A2A577E670018EE86 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 30CFD1142A577E650018EE86;
+					};
+					30CFD1342A577E670018EE86 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 30CFD1142A577E650018EE86;
+					};
+				};
+			};
+			buildConfigurationList = 30CFD1102A577E650018EE86 /* Build configuration list for PBXProject "FichaMakerT20" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30CFD10C2A577E650018EE86;
+			productRefGroup = 30CFD1162A577E650018EE86 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30CFD1142A577E650018EE86 /* FichaMakerT20 */,
+				30CFD12A2A577E670018EE86 /* FichaMakerT20Tests */,
+				30CFD1342A577E670018EE86 /* FichaMakerT20UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30CFD1132A577E650018EE86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30CFD1252A577E670018EE86 /* LaunchScreen.storyboard in Resources */,
+				30CFD1222A577E670018EE86 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30CFD1292A577E670018EE86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30CFD1332A577E670018EE86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30CFD1112A577E650018EE86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30CFD11D2A577E650018EE86 /* ViewController.swift in Sources */,
+				30CFD14D2A5FBD230018EE86 /* PdfHandler.swift in Sources */,
+				30CFD14A2A577E950018EE86 /* CharacterModel.swift in Sources */,
+				30CFD1192A577E650018EE86 /* AppDelegate.swift in Sources */,
+				30CFD11B2A577E650018EE86 /* SceneDelegate.swift in Sources */,
+				30CFD1522A5FBD8B0018EE86 /* PdfViewController.swift in Sources */,
+				30CFD1542A5FBECF0018EE86 /* SheetBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30CFD1272A577E670018EE86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30CFD1302A577E670018EE86 /* FichaMakerT20Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30CFD1312A577E670018EE86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30CFD13C2A577E670018EE86 /* FichaMakerT20UITestsLaunchTests.swift in Sources */,
+				30CFD13A2A577E670018EE86 /* FichaMakerT20UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30CFD12D2A577E670018EE86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30CFD1142A577E650018EE86 /* FichaMakerT20 */;
+			targetProxy = 30CFD12C2A577E670018EE86 /* PBXContainerItemProxy */;
+		};
+		30CFD1372A577E670018EE86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30CFD1142A577E650018EE86 /* FichaMakerT20 */;
+			targetProxy = 30CFD1362A577E670018EE86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30CFD1232A577E670018EE86 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30CFD1242A577E670018EE86 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		30CFD13D2A577E670018EE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30CFD13E2A577E670018EE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		30CFD1402A577E670018EE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X98529GHL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FichaMakerT20/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = montanha.FichaMakerT20;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		30CFD1412A577E670018EE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X98529GHL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FichaMakerT20/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = montanha.FichaMakerT20;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		30CFD1432A577E670018EE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X98529GHL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = montanha.FichaMakerT20Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FichaMakerT20.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FichaMakerT20";
+			};
+			name = Debug;
+		};
+		30CFD1442A577E670018EE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X98529GHL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = montanha.FichaMakerT20Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FichaMakerT20.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FichaMakerT20";
+			};
+			name = Release;
+		};
+		30CFD1462A577E670018EE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X98529GHL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = montanha.FichaMakerT20UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FichaMakerT20;
+			};
+			name = Debug;
+		};
+		30CFD1472A577E670018EE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X98529GHL3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = montanha.FichaMakerT20UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FichaMakerT20;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30CFD1102A577E650018EE86 /* Build configuration list for PBXProject "FichaMakerT20" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30CFD13D2A577E670018EE86 /* Debug */,
+				30CFD13E2A577E670018EE86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30CFD13F2A577E670018EE86 /* Build configuration list for PBXNativeTarget "FichaMakerT20" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30CFD1402A577E670018EE86 /* Debug */,
+				30CFD1412A577E670018EE86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30CFD1422A577E670018EE86 /* Build configuration list for PBXNativeTarget "FichaMakerT20Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30CFD1432A577E670018EE86 /* Debug */,
+				30CFD1442A577E670018EE86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30CFD1452A577E670018EE86 /* Build configuration list for PBXNativeTarget "FichaMakerT20UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30CFD1462A577E670018EE86 /* Debug */,
+				30CFD1472A577E670018EE86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30CFD10D2A577E650018EE86 /* Project object */;
+}
