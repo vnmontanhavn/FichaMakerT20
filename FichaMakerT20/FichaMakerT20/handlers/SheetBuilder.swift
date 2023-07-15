@@ -13,6 +13,8 @@ class SheetBuilder {
         let eff = Effect(name: "AttDexGoblin", value: 2, target: .attribute, repet: .once, effect: .sum)
         let power = Power(name: "Peste Esguia", description: "Seu tamanho é Pequeno (veja a página 106), mas seu deslocamento se mantém 9m. Apesar de pequenos, goblins são rápidos", type: .visibleClass, subType: .none, effects: [eff])
         let charClass = CharacterClass(characterClass: .nobre, lvl: 2)
-        return CharacterModel(name: "Mia", age: "20", maxLife: 20, life: 20, maxMana: 10, mana: 10, defence: 10, attributes: att, origin: .heroiCampones, divinity: .khalmyr, race: .goblin, characterClass: [charClass, charClass, charClass, charClass, charClass, charClass, charClass], powers: [power], knowSkills: [.enganacao, .atuacao, .fortitude, .diplomacia])
+        var model = CharacterModel(name: "Mia", age: "20", maxLife: 20, life: 20, maxMana: 10, mana: 10, defence: 10, attributes: att, origin: .heroiCampones, divinity: .khalmyr, race: .goblin, characterClass: [charClass, charClass, charClass, charClass, charClass, charClass, charClass], powers: [power], knowSkills: [.enganacao, .atuacao, .fortitude, .diplomacia])
+        model.setupSkills()
+        return model
     }
 }

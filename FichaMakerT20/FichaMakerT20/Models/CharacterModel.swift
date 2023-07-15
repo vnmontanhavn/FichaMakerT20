@@ -21,16 +21,23 @@ struct CharacterModel {
     let race: Race
     let characterClass: [CharacterClass]
     let powers: [Power]
-    let knowSkills: [Skill]
+    var skills: Skills = Skills()
+    var knowSkills: [SkillList]
+    
+    mutating func setupSkills() {
+        for item in knowSkills {
+            skills.skillList[item]?.train = true
+        }
+    }
 }
 
 struct Attributes {
-    var forca: AttValue = AttValue(name: "Força", value: 0)
-    var destreza: AttValue = AttValue(name: "Destreza", value: 0)
-    var constituicao: AttValue = AttValue(name: "Constituição", value: 0)
-    var inteligencia: AttValue = AttValue(name: "Inteligencia", value: 0)
-    var sabedoria: AttValue = AttValue(name: "Sabedoria", value: 0)
-    var carisma: AttValue = AttValue(name: "Carisma", value: 0)
+    var forca: AttValue = AttValue(name: .forca, value: 0)
+    var destreza: AttValue = AttValue(name: .desteza, value: 0)
+    var constituicao: AttValue = AttValue(name: .constituicao, value: 0)
+    var inteligencia: AttValue = AttValue(name: .inteligencia, value: 0)
+    var sabedoria: AttValue = AttValue(name: .sabedoria, value: 0)
+    var carisma: AttValue = AttValue(name: .carisma, value: 0)
     
     init(forca: Int, destreza: Int, constituicao: Int, inteligencia: Int, sabedoria: Int , carisma: Int) {
         self.forca.value = forca
@@ -42,8 +49,13 @@ struct Attributes {
     }
 }
 
+struct CharacterClass {
+    let characterClass: CharacterClassEnum
+    var lvl: Int
+}
+
 struct AttValue {
-    let name: String
+    let name: AttList
     var value: Int
 }
 
@@ -60,9 +72,78 @@ struct Effect {
     let name: String
     let value: Int
     let target: EffectTarget
-    var skill: Skill?
+    var skill: SkillList?
     let repet: RepetEffect
     let effect: EffectType
+}
+//TODO: tratar a percia de oficio para permitir que seja incluido variações
+//TODO: Organizar código separando funções, Structs e Enums
+func isOnlyTrain(skill: SkillList) -> Bool {
+    switch skill {
+    case .adestramento, .conhecimento, .guerra, .jogatina, .ladinagem, .misticismo, .nobreza, .oficio, .pilotagem, .religião:
+        return true
+    default:
+        return false
+    }
+}
+func isArmorPenal(skill: SkillList) -> Bool {
+    switch skill {
+    case .acrobacia, .furtividade, .ladinagem:
+        return true
+    default:
+        return false
+    }
+}
+
+struct Skills {
+    var skillList: [SkillList: SkillValue]
+    init() {
+        var list: [SkillList: SkillValue] = [:]
+        for item in SkillList.allCases {
+            switch item {
+            case .acrobacia, .cavalgar, .furtividade, .iniciativa, .ladinagem, .pilotagem, .pontaria, .reflexos:
+                list[item] = SkillValue(skillAtt: .desteza, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
+            case .adestramento, .atuacao, .diplomacia, .enganacao, .intimidacao, .jogatina:
+                list[item] = SkillValue(skillAtt: .carisma, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
+            case .atletismo, .luta:
+                list[item] = SkillValue(skillAtt: .forca, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
+            case .conhecimento, .guerra, .investigacao, .misticismo, .nobreza, .oficio:
+                list[item] = SkillValue(skillAtt: .inteligencia, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
+            case .cura, .intuicao, .percepção, .religião, .sobrevivência, .vontade:
+                list[item] = SkillValue(skillAtt: .sabedoria, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
+            case .fortitude:
+                list[item] = SkillValue(skillAtt: .constituicao, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
+            }
+        }
+        skillList = list
+    }
+}
+
+struct SkillValue {
+    var skillAtt: AttList
+    var effects: [Effect]
+    var armorPenal: Bool
+    var onlyTrain: Bool
+    var others: Int
+    var train: Bool
+    
+    init(skillAtt: AttList, effects: [Effect] = [], others: Int = 0, train: Bool = false, armorPenal: Bool = false, onlyTrain: Bool = false) {
+        self.skillAtt = skillAtt
+        self.effects = effects
+        self.others = others
+        self.train = train
+        self.armorPenal = armorPenal
+        self.onlyTrain = onlyTrain
+    }
+}
+
+enum AttList: String {
+    case forca = "Força"
+    case desteza = "Desteza"
+    case constituicao = "Constituição"
+    case inteligencia = "Inteligencia"
+    case sabedoria = "Sabedoria"
+    case carisma = "Carisma"
 }
 
 enum EffectType: String {
@@ -73,28 +154,24 @@ enum EffectType: String {
 
 enum Race: String {
     case humano = "Humano"
-    case anao
-    case dahllan
-    case elfo
-    case goblin
-    case lefou
-    case minotauro
-    case qareen
-    case golem
-    case hynne
-    case kliren
-    case medusa
-    case osteon
-    case sereia
-    case sílfide
-    case suraggelAggelus
-    case suraggelSulfure
-    case trog
-}
-
-struct CharacterClass {
-    let characterClass: CharacterClassEnum
-    var lvl: Int
+    case anao = "Anão"
+    case dahllan = "Dahllan"
+    case elfo = "Elfo"
+    case goblin = "Goblin"
+    case lefou = "Lefou"
+    case minotauro = "Minotauro"
+    case qareen = "Qareen"
+    case golem = "Golem"
+    case hynne = "Hynne"
+    case kliren = "Kliren"
+    case medusa = "Medusa"
+    case osteon = "Osteon"
+    case sereia = "Sereia"
+    case tritao = "Tritão"
+    case silfide = "Sílfide"
+    case suraggelAggelus = "Suraggel - Aggelus"
+    case suraggelSulfure = "Suraggel - Sulfure"
+    case trog = "Trog"
 }
 
 enum CharacterClassEnum: String {
@@ -122,7 +199,7 @@ enum RepetEffect: String {
     case custom
 }
 
-enum Skill: String {
+enum SkillList: String, CaseIterable {
     case acrobacia
     case adestramento
     case atletismo

@@ -53,7 +53,7 @@ class PdfHandler {
     }
     func sheetFirstLine(point: CGPoint, width: Double, characterSheet: CharacterModel) -> Double {
         let textFont = UIFont.boldSystemFont(ofSize: 12)
-        let text = "Nome: \(characterSheet.name)  Idade: \(characterSheet.age)"
+        let text = "Nome: \(characterSheet.name)    Idade: \(characterSheet.age)"
         var height = text.height(withConstrainedWidth: width, font: textFont)
         let label = UILabel()
         label.text = text
@@ -67,7 +67,7 @@ class PdfHandler {
     }
     func sheetSecondLine(point: CGPoint, width: Double, characterSheet: CharacterModel) -> Double {
         let textFont = UIFont.boldSystemFont(ofSize: 12)
-        let text = "Raça: \(characterSheet.race.rawValue)  Origem: \(characterSheet.origin.rawValue) "
+        let text = "Raça: \(characterSheet.race.rawValue)    Origem: \(characterSheet.origin.rawValue)   "
         var height = text.height(withConstrainedWidth: width, font: textFont)
         let localWidth = text.width(withConstrainedHeight: height, font: textFont)
         let label = UILabel()
@@ -107,7 +107,7 @@ class PdfHandler {
         var xPointText: Double = point.x
         var xPointValue: Double = xPointText + (widthTitle / 2) - (widthValue / 2)
         for item in att {
-            text = item.name
+            text = item.name.rawValue
             textValue = "\(item.value)"
             heightTitle = text.height(withConstrainedWidth: width, font: textFont)
             widthTitle = text.width(withConstrainedHeight: heightTitle, font: textFont)
@@ -143,6 +143,10 @@ class PdfHandler {
             view.autoScales = true
         }
     }
+    func skillValues() -> String {
+        return ""
+    }
+    
 }
 
 extension String {
