@@ -113,6 +113,8 @@ struct Skills {
                 list[item] = SkillValue(skillAtt: .sabedoria, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
             case .fortitude:
                 list[item] = SkillValue(skillAtt: .constituicao, armorPenal: isArmorPenal(skill: item), onlyTrain: isOnlyTrain(skill: item))
+            case .none:
+                print("none")
             }
         }
         skillList = list
@@ -229,6 +231,9 @@ enum SkillList: String, CaseIterable {
     case religião
     case sobrevivência
     case vontade
+    case none
+    
+   // static let allValues = [acrobacia, adestramento, atletismo, atuacao, cavalgar, conhecimento, cura, diplomacia, enganacao, fortitude, guerra, iniciativa, intimidacao, intuicao, investigacao, jogatina, ladinagem, luta, misticismo, nobreza, oficio, percepção, pilotagem, pontaria, reflexos, religião, sobrevivência, vontade]
 }
 
 enum EffectTarget: String {

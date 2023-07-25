@@ -21,10 +21,15 @@ class PdfHandler {
         let data = graphc.pdfData { (context) in
             context.beginPage()
             var point = CGPoint(x: pageXStartPosition, y: pageYStartPosition)
+            var skillStartWidth = pageWidth/3
             point.y = sheetFirstLine(point: point, width: pageWidth - (pageXStartPosition * 2), characterSheet: characterSheet)
             point.y = sheetSecondLine(point: point, width: pageWidth - (pageXStartPosition * 2), characterSheet: characterSheet)
             point.y = sheetAttElement(point: point, width: pageWidth - (pageXStartPosition * 2), characterSheet: characterSheet)
-            
+            point.y = point.y + pageYStartPosition
+            point.x = skillStartWidth * 2 - pageXStartPosition
+            let skillheightEnd = createSkillList(point: point, width: skillStartWidth, characterSheet: characterSheet)
+            drawBorder(rect: CGRect(x: point.x - 10, y: point.y - 10, width: skillStartWidth + 20, height: skillheightEnd - point.y + 20))
+            point.x = pageXStartPosition
             createImage(rect: CGRect(x: pageWidth / 2, y: point.y, width: 30, height: 30))
 // --------------xxxxxx---------------
             
@@ -51,6 +56,13 @@ class PdfHandler {
         }
         return data
     }
+    
+    func drawBorder(rect: CGRect) {
+        let border = PDFBorder()
+        border.lineWidth = 5
+        border.draw(in: rect)
+    }
+    
     func sheetFirstLine(point: CGPoint, width: Double, characterSheet: CharacterModel) -> Double {
         let textFont = UIFont.boldSystemFont(ofSize: 12)
         let text = "Nome: \(characterSheet.name)    Idade: \(characterSheet.age)"
@@ -137,14 +149,90 @@ class PdfHandler {
         image?.draw(in: rect)
     }
     
+    func createSkillList(point: CGPoint, width: Double, characterSheet: CharacterModel) -> Double {
+        var localPoint = point
+        for item in SkillList.allCases {
+            if item == .none {
+                break
+            }
+            localPoint.y = drawSkill(skill: item, characterSheet: characterSheet, width: width, point: localPoint)
+        }
+        return localPoint.y
+    }
+    
+    func drawSkill(skill: SkillList, characterSheet: CharacterModel, width: Double, point: CGPoint) -> Double {
+        let textFont = UIFont.boldSystemFont(ofSize: 12)
+        let label = UILabel()
+        label.font = textFont
+        label.numberOfLines = 0
+        label.textAlignment = .right
+        var text = skillValue(skill: skill, characterSheet: characterSheet)
+        let height = text.height(withConstrainedWidth: width, font: textFont)
+        label.text = text
+        label.drawText(in: CGRect(x: point.x, y: point.y, width: width, height: height))
+        return point.y + height
+    }
+    
     func pdfPreview(pdfData: Data?, view: inout PDFView) {
         if let data = pdfData {
             view.document = PDFDocument(data: data)
             view.autoScales = true
         }
     }
-    func skillValues() -> String {
-        return ""
+    
+    
+    func skillValue(skill: SkillList, characterSheet: CharacterModel) -> String {
+        guard let skillTarget = characterSheet.skills.skillList[skill] else {
+            return "skill não cadastrada"
+        }
+        let lvl = characterSheet.characterClass.reduce(0, {$0 + $1.lvl})
+        let attValue = attValue(att: skillTarget.skillAtt, characterSheet: characterSheet)
+        var textName = "\(skill.rawValue) "
+        var textValue = "\(lvl/2) + \(attValue) + "
+        var profBonus = 0
+        var other = 0
+        var total = lvl/2 + attValue
+        if skillTarget.train {
+            textName = "*" + textName
+            profBonus = 2
+            if lvl >= 7 && lvl < 15 {
+                profBonus = 4
+            } else if lvl >= 15 {
+                profBonus = 6
+            }
+        }
+        textValue = textValue + "\(profBonus) + "
+        for item in skillTarget.effects {
+            if item.target == .skill && item.skill == skill {
+                var value = item.value
+                if item.effect == .subitract {
+                    value = -value
+                }
+                other = other + value
+            }
+        }
+        total = total + profBonus + other
+        var value = skillTarget.onlyTrain && !skillTarget.train ? "ND" : "\(total)"
+        textValue = value + " = " + textValue + "\(other)"
+        return "\(textName)  \(textValue)"
+    }
+    func attValue(att: AttList, characterSheet: CharacterModel) -> Int {
+        var value = 0
+        switch att {
+        case .forca:
+            value = characterSheet.attributes.forca.value
+        case .desteza:
+            value = characterSheet.attributes.destreza.value
+        case .constituicao:
+            value = characterSheet.attributes.constituicao.value
+        case .inteligencia:
+            value = characterSheet.attributes.inteligencia.value
+        case .sabedoria:
+            value = characterSheet.attributes.sabedoria.value
+        case .carisma:
+            value = characterSheet.attributes.carisma.value
+        }
+        return value
     }
     
 }
